@@ -12,21 +12,35 @@
 						<p style="opacity: 0.5;">Completed <%= time_ago_in_words(item.completed_at) %> ago</p>
 					</div>
 
-					<div class="col-md-2">
-						<p><%= link_to complete_item_path(item), method: :patch do %></p>
-							<i class="fa fa-lg fa-check"></i>
-						<% end %>
-					</div>
+					<ul class="list-inline">
+						<div class="col-md-2">
+							<p><%= link_to position_up_item_path(item), method: :patch do %></p>
+								<i class="fas fa-lg fa-arrow-up"></i>
+							<% end %>
+						</div>
 
-					<div class="col-md-2">
-						<p><%= link_to item, method: :delete, data: { confirm: "Are you sure?" } do %></p>
-							<i class="fa fa-lg fa-trash"></i>
-						<% end %>
-					</div>
+						<div class="col-md-2">
+							<p><%= link_to position_down_item_path(item), method: :patch do %></p>
+								<i class="fas fa-lg fa-arrow-down"></i>
+							<% end %>
+						</div>		
 
+						<div class="col-md-2">
+							<p><%= link_to complete_item_path(item), method: :patch do %></p>
+								<i class="fa fa-lg fa-check"></i>
+							<% end %>
+						</div>
+
+						<div class="col-md-2">
+							<p><%= link_to item, method: :delete, data: { confirm: "Are you sure?" } do %></p>
+								<i class="fa fa-lg fa-trash"></i>
+							<% end %>
+						</div>
+					</ul>
 				</div>
 
 			<% else %>
+
 				<div class="row item">
 
 					<div class="col-md-8">
@@ -35,19 +49,33 @@
 						<p>Created <%= time_ago_in_words(item.created_at) %> ago</p>
 					</div>
 
-					<div class="col-md-2">
-						<p><%= link_to complete_item_path(item), method: :patch do %></p>
-							<i class="fa fa-lg fa-check"></i>
-						<% end %>
-					</div>
+					<ul class="list-inline">
+						<div class="col-md-2">
+							<p><%= link_to position_up_item_path(item), method: :patch do %></p>
+								<i class="fas fa-lg fa-arrow-up"></i>
+							<% end %>
+						</div>
 
-					<div class="col-md-2">
-						<p><%= link_to item, method: :delete, data: { confirm: "Are you sure?" } do %></p>
-							<i class="fa fa-lg fa-trash"></i>
-						<% end %>
-					</div>
+						<div class="col-md-2">
+							<p><%= link_to position_down_item_path(item), method: :patch do %></p>
+								<i class="fas fa-lg fa-arrow-down"></i>
+							<% end %>
+						</div>	
 
+						<div class="col-md-2">
+							<p><%= link_to complete_item_path(item), method: :patch do %></p>
+								<i class="fa fa-lg fa-check"></i>
+							<% end %>
+						</div>
+
+						<div class="col-md-2">
+							<p><%= link_to item, method: :delete, data: { confirm: "Are you sure?" } do %></p>
+								<i class="fa fa-lg fa-trash"></i>
+							<% end %>
+						</div>
+					</ul>
 				</div>
+
 			<% end %>
 		<% end %>
 	</div>

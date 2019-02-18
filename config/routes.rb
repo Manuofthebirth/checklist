@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 		member do
 			# reference to complete method in items_controller and PATCH route
 			patch :complete
+			patch :position_up
+			patch :position_down
 		end
 	end
 	root 'items#index'
