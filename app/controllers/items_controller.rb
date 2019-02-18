@@ -45,6 +45,18 @@ class ItemsController < ApplicationController
 		redirect_to root_path
 	end
 
+	def position_up
+		@item = Item.find(params[:id])
+		@item.move_higher.update_attribute(:psoition)
+		redirect_to root_path
+	end
+
+	def position_down
+		@item = Item.find(params[:id])
+		@item.move_lower.update_attribute(:psoition)
+		redirect_to root_path
+	end
+
 
 	private
 
